@@ -9,8 +9,7 @@ import dataStructures.exceptions.NoSuchElementException;
  * @param <E> Generic Element
  * 
  */
-class TwoWayLinkedIterator<E> extends LinkedIterator<E>
-        implements TwoWayIterator<E> {
+class TwoWayLinkedIterator<E> extends LinkedIterator<E> implements TwoWayIterator<E> {
     /**
      * Node with the last element in the iteration.
      */

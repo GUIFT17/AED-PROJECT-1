@@ -1,4 +1,5 @@
 package dataStructures;
+
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -26,7 +27,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
      * @param theElement - The element to be contained in the node
      * @param theNext - the next node
      */
-    public SinglyListNode( E theElement, SinglyListNode<E> theNext ) {
+    public SinglyListNode(E theElement, SinglyListNode<E> theNext) {
         element = theElement;
         next = theNext;
     }
@@ -35,7 +36,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
      *
      * @param theElement to be contained in the node
      */
-    public SinglyListNode( E theElement ) {
+    public SinglyListNode(E theElement) {
         this(theElement, null);
     }
 
@@ -43,7 +44,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
      *
      * @return the element contained in the node
      */
-    public E getElement( ) {
+    public E getElement() {
         return element;
     }
 
@@ -51,7 +52,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
      *
      * @return the next node
      */
-    public LinkedNode<E> getNext( ) {
+    public LinkedNode<E> getNext() {
         return next;
     }
 
@@ -59,7 +60,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
      *
      * @param newElement - New element to replace the current element
      */
-    public void setElement( E newElement ) {
+    public void setElement(E newElement) {
         element = newElement;
     }
 
@@ -67,7 +68,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
      *
      * @param newNext - node to replace the next node
      */
-    public void setNext( LinkedNode<E> newNext ) {
+    public void setNext(LinkedNode<E> newNext) {
         next = newNext;
     }
 }

@@ -9,12 +9,13 @@ import dataStructures.exceptions.NoSuchElementException;
  * @param <E> Generic Element
  *
  */
-
 class LinkedIterator<E>  implements Iterator<E> {
+
     /**
      * First node of the list.
      */
     private final LinkedNode<E> first;
+
     /**
      * Node with the next element in the iteration.
      */
@@ -30,4 +31,22 @@ class LinkedIterator<E>  implements Iterator<E> {
     }
 
     //TODO: Left as an exercise.
+    @Override
+    public boolean hasNext() {
+        return nextToReturn != null;
+    }
+
+    @Override
+    public E next() {
+        if (nextToReturn == null)
+            throw new NoSuchElementException();
+        E elem =  nextToReturn.getElement();
+        nextToReturn = nextToReturn.getNext();
+        return elem;
+    }
+
+    @Override
+    public void rewind() {
+        nextToReturn=first;
+    }
 }
