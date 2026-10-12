@@ -10,6 +10,7 @@ import java.io.Serializable;
  *
  */
 public interface Node<E> extends Serializable {
+
     /**
      *
      * @return the element

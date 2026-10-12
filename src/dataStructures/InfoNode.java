@@ -7,7 +7,7 @@ package dataStructures;
  * @param <E> Generic element
  */
 
-interface InfoNode<E> extends Node<E>{
+interface InfoNode<E> extends Node<E> {
 
     /**
      * Update the element

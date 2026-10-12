@@ -15,7 +15,6 @@ import java.io.Serializable;
      * @param <E> Generic Element
      *
      */
-
     public interface SortedList<E> extends Serializable {
 
         /**
@@ -49,6 +48,7 @@ import java.io.Serializable;
          * @throws NoSuchElementException - if size() == 0
          */
         E getMax( ) throws NoSuchElementException;
+
         /**
          *
          * @param element to be found
@@ -62,6 +62,7 @@ import java.io.Serializable;
          * @return element in the list or null
          */
         E get(E element );
+
         /**
          * Inserts the specified element at the list, according to the natural order.
          * If there is an equal element, the new element is inserted after it.
@@ -75,5 +76,4 @@ import java.io.Serializable;
          * @return element removed from the list or null if !belongs
          */
         E remove(E element);
-
 }

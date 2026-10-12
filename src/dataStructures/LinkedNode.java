@@ -1,4 +1,5 @@
 package dataStructures;
+
 /**
  * Linked Node (with next)
  *
@@ -8,11 +9,12 @@ package dataStructures;
  * @param <E> Generic Element
  */
 interface LinkedNode<E> extends InfoNode<E> {
+
     /**
      *
      * @return
      */
-    LinkedNode<E> getNext( );
+    LinkedNode<E> getNext();
 
     /**
      *
