@@ -1,8 +1,5 @@
 package dataStructures;
 
-import java.io.Serial;
-import java.io.Serializable;
-
 /**
  * Singly List Node Implementation
  * @author AED  Team
