@@ -6,7 +6,7 @@ import java.io.Serializable;
  * The name keeps the capitalization with which it was added.
  * @author André Amante, Guilherme Teixeira
  */
-public class City implements Serializable {
+public class CityClass implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -20,7 +20,7 @@ public class City implements Serializable {
      * @param countryName the name of the country
      * @param population the number of inhabitants
      */
-    public City(String cityName, String countryName, long population) {
+    public CityClass(String cityName, String countryName, long population) {
         this.cityName = cityName;
         this.countryName = countryName;
         this.population = population;

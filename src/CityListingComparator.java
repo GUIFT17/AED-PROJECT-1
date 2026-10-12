@@ -8,7 +8,7 @@ import java.io.Serial;
  * and then city name (ascending alphabetical order)
  * @author André Amante, Guilherme Teixeira
  */
-public class CityListingComparator implements Comparator<City> {
+public class CityListingComparator implements Comparator<CityClass> {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -20,7 +20,7 @@ public class CityListingComparator implements Comparator<City> {
      * is equivalent to or comes after c2 in the listing order, respectively
      */
     @Override
-    public int compare(City c1, City c2) {
+    public int compare(CityClass c1, CityClass c2) {
         int cmp = c1.getCountryName().compareTo(c2.getCountryName());
         if (cmp != 0) return cmp;
         cmp = Long.compare(c2.getPopulation(), c1.getPopulation());

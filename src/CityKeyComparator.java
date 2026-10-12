@@ -8,7 +8,7 @@ import java.io.Serial;
  * same country name and the same city name
  * @author André Amante, Guilherme Teixeira
  */
-public class CityKeyComparator implements Comparator<City> {
+public class CityKeyComparator implements Comparator<CityClass> {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -20,7 +20,7 @@ public class CityKeyComparator implements Comparator<City> {
      * equal to or greater than c2, respectively
      */
     @Override
-    public int compare(City c1, City c2) {
+    public int compare(CityClass c1, CityClass c2) {
         int cmp = c1.getCountryName().compareTo(c2.getCountryName());
         if (cmp != 0) return cmp;
         return c1.getCityName().compareTo(c2.getCityName());
