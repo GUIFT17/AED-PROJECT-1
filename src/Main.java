@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class Main {
     private static final String CITY_ADDED = "City successfully added.";
     private static final String CITY_ALR_EXISTS = "City already exists.";
@@ -18,11 +17,11 @@ public class Main {
     private static final String QUIT = "QUIT";
     private static final String COMMAND_ERROR = "Unknown command. Type help to see available commands.\n";
 
-    private static void main (String[] args) {
+    public static void main(String[] args) {
         command();
     }
 
-    private static void command(){
+    private static void command() {
         Scanner in = new Scanner(System.in);
         String command = in.next();
         while (!command.equalsIgnoreCase(QUIT)) {
@@ -40,18 +39,17 @@ public class Main {
         in.close();
     }
 
-
     /**
      * Handles the {@code help} command
      * Prints the list of all available commands with a brief description of each.
      */
     private static void helpCommand() {
-        System.out.println("addCity: Adds a new city to the directory.ê\n" +
-                "removeCity: Removes an existing city from the directory.ê\n" +
-                "population: Returns the number of inhabitants of a city.ê\n" +
-                "listCities: Lists all cities currently stored in the directory.ê\n" +
-                "help: Displays the list of available commands.ê\n" +
-                "quit: Terminates the application.ê"
+        System.out.println("addCity: Adds a new city to the directory.\n" +
+                "removeCity: Removes an existing city from the directory.\n" +
+                "population: Returns the number of inhabitants of a city.\n" +
+                "listCities: Lists all cities currently stored in the directory.\n" +
+                "help: Displays the list of available commands.\n" +
+                "quit: Terminates the application."
         );
     }
 
@@ -68,8 +66,6 @@ public class Main {
     }
 
     private static void quitCommand() {
-
     }
-
 
    }
