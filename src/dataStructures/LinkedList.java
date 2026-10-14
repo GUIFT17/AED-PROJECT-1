@@ -78,6 +78,7 @@ abstract class LinkedList<E> implements Serializable {
     void addFirstNode(LinkedNode<E> newNode) {
         //TODO: Left as an exercise.
         newNode.setNext(head);
+        head = newNode;
         if (tail == null)
             tail = newNode;
         currentSize++;

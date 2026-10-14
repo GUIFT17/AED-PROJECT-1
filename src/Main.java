@@ -63,7 +63,7 @@ public class Main {
                 case ADDCITY -> addCityCommand();
                 case REMOVECITY -> removeCityCommand();
                 case POPULATION -> populationCommand();
-                case LISTCITIES -> listCitiesCommand();
+                // case LISTCITIES -> listCitiesCommand();
                 default -> System.out.print(COMMAND_ERROR);
             }
             command = in.readLine();
