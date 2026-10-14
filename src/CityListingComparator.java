@@ -21,7 +21,7 @@ public class CityListingComparator implements Comparator<CityClass> {
      */
     @Override
     public int compare(CityClass c1, CityClass c2) {
-        int cmp = c1.getCountryName().compareTo(c2.getCountryName());
+        int cmp = c1.getCountryName().compareToIgnoreCase(c2.getCountryName());
         if (cmp != 0) return cmp;
         cmp = Long.compare(c2.getPopulation(), c1.getPopulation());
         if (cmp != 0) return cmp;
