@@ -25,6 +25,8 @@ public class Main {
     private static final String QUIT = "QUIT";
     private static final String COMMAND_ERROR = "Unknown command. Type help to see available commands.\n";
 
+    private static final int ANY_POPULATION = 0;
+
     private static BufferedReader in;
     private static SortedList<CityClass> citiesByKey;
     private static SortedList<CityClass> citiesByListing;
@@ -84,10 +86,26 @@ public class Main {
         );
     }
 
-    private static void listCitiesCommand() {
-    }
+    /*private static void listCitiesCommand() {
+        if(!citiesByListing.isEmpty()){
+            Iterator<CityClass> it = citiesByListing.iterator();
+            while(it.hasNext()){
+                CityClass ct = it.next();
+                System.out.println(ct.getCountryName() + " - " + ct.getPopulation() + " - " + ct.getCityName());
+                }
+        }
+        System.out.println(NO_CITIES_AVAILABLE);
 
-    private static void populationCommand() {
+    }*/
+
+    private static void populationCommand() throws IOException {
+        String cityName = in.readLine().trim();
+        String countryName = in.readLine().trim();
+        CityClass city = citiesByKey.get(new CityClass(cityName, countryName,ANY_POPULATION));
+        if(city == null){
+            System.out.println(CITY_NO_EXISTS);
+        }
+        else{System.out.println("Population: " + city.getPopulation());}
     }
 
     private static void removeCityCommand() {

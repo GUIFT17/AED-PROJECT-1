@@ -211,6 +211,7 @@ abstract class LinkedList<E> implements Serializable {
 
     // MANUAL DESERIALIZATION
     @Serial
+    @SuppressWarnings("unchecked")
     private void readObject (ObjectInputStream ois) throws IOException, ClassNotFoundException {
         //TODO: Left as an exercise.
         head = null;
