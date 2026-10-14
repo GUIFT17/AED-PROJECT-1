@@ -32,6 +32,16 @@ public class Main {
     private static SortedList<CityClass> citiesByListing;
 
 
+    /**
+     * Loads the city directory from the file {@code FILE_NAME}.
+     * If the file exists, both sorted lists (by key and by listing) are read from it,
+     * in the same order in which {@code quitCommand} writes them.
+     * Otherwise, two empty sorted lists are created, one ordered by {@code CityKeyComparator}
+     * and the other by {@code CityListingComparator}.
+     *
+     * @throws IOException            if an error occurs while reading the file
+     * @throws ClassNotFoundException if the class of a serialized object cannot be found
+     */
     @SuppressWarnings("unchecked")
     private static void loadDirectory() throws IOException, ClassNotFoundException {
         File file = new File(FILE_NAME);
@@ -55,6 +65,15 @@ public class Main {
         command();
     }
 
+    /**
+     * Reads commands from the standard input, one per line, and executes the corresponding
+     * handler until the {@code quit} command is entered.
+     * Commands are case-insensitive and surrounding whitespace is ignored.
+     * Unknown commands print an error message.
+     * When {@code quit} is entered, the directory is saved and the input is closed.
+     *
+     * @throws IOException if an error occurs while reading the input or saving the directory
+     */
     private static void command() throws IOException {
         String command = in.readLine();
         while (!command.trim().equalsIgnoreCase(QUIT)) {
@@ -111,6 +130,15 @@ public class Main {
     private static void removeCityCommand() {
     }
 
+    /**
+     * Handles the {@code addCity} command.
+     * Reads three lines from the input: the city name, the country name and the population.
+     * If a city with the same key (name and country) already exists in the directory,
+     * an error message is printed and nothing is changed.
+     * Otherwise, the city is inserted in both sorted lists and a confirmation is printed.
+     *
+     * @throws IOException if an error occurs while reading the input
+     */
     private static void addCityCommand() throws IOException {
         String cityName = in.readLine().trim();
         String countryName = in.readLine().trim();
@@ -126,6 +154,15 @@ public class Main {
         }
     }
 
+    /**
+     * Handles the {@code quit} command.
+     * Saves the directory to the file {@code FILE_NAME}, replacing any previous content.
+     * The two lists are written in a fixed order (by key, then by listing), which must match
+     * the order in which {@code loadDirectory} reads them.
+     * Prints a confirmation and a goodbye message.
+     *
+     * @throws IOException if an error occurs while writing the file
+     */
     private static void quitCommand() throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(citiesByKey);
