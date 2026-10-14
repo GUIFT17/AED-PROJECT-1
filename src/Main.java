@@ -30,6 +30,7 @@ public class Main {
     private static SortedList<CityClass> citiesByListing;
 
 
+    @SuppressWarnings("unchecked")
     private static void loadDirectory() throws IOException, ClassNotFoundException {
         File file = new File(FILE_NAME);
         if (file.exists()) {
@@ -54,8 +55,8 @@ public class Main {
 
     private static void command() throws IOException {
         String command = in.readLine();
-        while (!command.equalsIgnoreCase(QUIT)) {
-            switch (command.toUpperCase()) {
+        while (!command.trim().equalsIgnoreCase(QUIT)) {
+            switch (command.trim().toUpperCase()) {
                 case HELP -> helpCommand();
                 case ADDCITY -> addCityCommand();
                 case REMOVECITY -> removeCityCommand();
@@ -93,9 +94,9 @@ public class Main {
     }
 
     private static void addCityCommand() throws IOException {
-        String cityName = in.readLine();
-        String countryName = in.readLine();
-        long population = Long.parseLong(in.readLine());
+        String cityName = in.readLine().trim();
+        String countryName = in.readLine().trim();
+        long population = Long.parseLong(in.readLine().trim());
 
         CityClass city = new CityClass(cityName, countryName, population);
         if(citiesByKey.contains(city))
@@ -107,6 +108,12 @@ public class Main {
         }
     }
 
-    private static void quitCommand() {
+    private static void quitCommand() throws IOException {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+            oos.writeObject(citiesByKey);
+            oos.writeObject(citiesByListing);
+        }
+        System.out.println(CITY_SAVED);
+        System.out.println(GOODBYE_MSG);
     }
    }

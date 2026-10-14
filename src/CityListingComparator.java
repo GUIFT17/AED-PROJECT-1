@@ -25,6 +25,6 @@ public class CityListingComparator implements Comparator<CityClass> {
         if (cmp != 0) return cmp;
         cmp = Long.compare(c2.getPopulation(), c1.getPopulation());
         if (cmp != 0) return cmp;
-        return c1.getCityName().compareTo(c2.getCityName());
+        return c1.getCityName().compareToIgnoreCase(c2.getCityName());
     }
 }

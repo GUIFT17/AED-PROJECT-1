@@ -23,6 +23,6 @@ public class CityKeyComparator implements Comparator<CityClass> {
     public int compare(CityClass c1, CityClass c2) {
         int cmp = c1.getCountryName().compareTo(c2.getCountryName());
         if (cmp != 0) return cmp;
-        return c1.getCityName().compareTo(c2.getCityName());
+        return c1.getCityName().compareToIgnoreCase(c2.getCityName());
     }
 }
