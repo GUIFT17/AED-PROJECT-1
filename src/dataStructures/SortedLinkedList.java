@@ -176,7 +176,7 @@ public class SortedLinkedList<E> extends LinkedList<E> implements SortedList<E> 
         LinkedNode<E> prev = null;
         LinkedNode<E> node = getFirstNode();
         while (node != null) {
-            int comp =  comparator.compare(element, node.getElement());
+            int comp =  comparator.compare(node.getElement(), element);
             if (comp == 0)
                 return new pairNode<>(prev, node);
             if (comp > 0)
