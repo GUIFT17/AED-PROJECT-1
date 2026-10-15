@@ -2,6 +2,7 @@ import java.io.*;
 
 import dataStructures.SortedLinkedList;
 import dataStructures.SortedList;
+import dataStructures.Iterator;
 
 /**
  * Persistent City Directory: manages a collection of cities (name, country, population),
@@ -115,7 +116,7 @@ public class Main {
                 case ADDCITY -> addCityCommand();
                 case REMOVECITY -> removeCityCommand();
                 case POPULATION -> populationCommand();
-                // case LISTCITIES -> listCitiesCommand();
+                case LISTCITIES -> listCitiesCommand();
                 default -> System.out.print(COMMAND_ERROR);
             }
             command = in.readLine();
@@ -149,7 +150,7 @@ public class Main {
      * Time complexity: O(1) at best case (empty list) and O(n) worst case
      */
 
-    /* private static void listCitiesCommand() {
+     private static void listCitiesCommand() {
         if(!citiesByListing.isEmpty()){
             Iterator<CityClass> it = citiesByListing.iterator();
             while(it.hasNext()){
@@ -157,9 +158,8 @@ public class Main {
                 System.out.println(ct.getCountryName() + " - " + ct.getPopulation() + " - " + ct.getCityName());
                 }
         }
-        System.out.println(NO_CITIES_AVAILABLE);
-
-    }*/
+        else {System.out.println(NO_CITIES_AVAILABLE);}
+    }
 
     /**
      * Handles the {@code population} command.
