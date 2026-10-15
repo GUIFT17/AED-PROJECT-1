@@ -4,8 +4,8 @@ package dataStructures;
  * Singly List Node Implementation
  * @author AED  Team
  * @version 1.0
+ * Space Complexity: O(1) one reference
  * @param <E> Generic Element
- *
  */
 class SinglyListNode<E> implements LinkedNode<E> {
 
@@ -20,7 +20,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
     private LinkedNode<E> next;
 
     /**
-     *
+     * Time Complexity: O(1)
      * @param theElement - The element to be contained in the node
      * @param theNext - the next node
      */
@@ -30,7 +30,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
     }
 
     /**
-     *
+     * Time Complexity: O(1)
      * @param theElement to be contained in the node
      */
     public SinglyListNode(E theElement) {
@@ -38,7 +38,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
     }
 
     /**
-     *
+     * Time Complexity: O(1)
      * @return the element contained in the node
      */
     public E getElement() {
@@ -46,7 +46,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
     }
 
     /**
-     *
+     * Time Complexity: O(1)
      * @return the next node
      */
     public LinkedNode<E> getNext() {
@@ -54,7 +54,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
     }
 
     /**
-     *
+     * Time Complexity: O(1)
      * @param newElement - New element to replace the current element
      */
     public void setElement(E newElement) {
@@ -62,7 +62,7 @@ class SinglyListNode<E> implements LinkedNode<E> {
     }
 
     /**
-     *
+     *Time complexity: O(1)
      * @param newNext - node to replace the next node
      */
     public void setNext(LinkedNode<E> newNext) {
