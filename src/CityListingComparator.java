@@ -6,7 +6,8 @@ import java.io.Serial;
  * Compares cities by the order used to list them:
  * country first (ascending alphabetical order), then population (descending order)
  * and then city name (ascending alphabetical order)
- * @author André Amante, Guilherme Teixeira
+ * @author André Amante 70945, Guilherme Teixeira 67917
+ * Space Complexity: O(1), because there is a single object, and it stores nothing.
  */
 public class CityListingComparator implements Comparator<CityClass> {
     @Serial
@@ -18,6 +19,8 @@ public class CityListingComparator implements Comparator<CityClass> {
      * @param c2 second city being compared
      * @return a negative integer, zero or a positive integer as c1 comes before,
      * is equivalent to or comes after c2 in the listing order, respectively
+     * Time Complexity: O(1) at best case (different countries on the first character),
+     * O(l) at worst case (l is the length of the longest name compared).
      */
     @Override
     public int compare(CityClass c1, CityClass c2) {

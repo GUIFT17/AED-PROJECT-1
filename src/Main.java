@@ -15,6 +15,8 @@ import dataStructures.SortedList;
  * In the time complexity of the methods, n is the number of cities in the directory
  * and c is the number of commands read. The comparison of two strings is considered O(1).
  *
+ * @author André Amante 70945, Guilherme Teixeira 67917
+ *
  * Space complexity: O(n) (two lists with n nodes each, which share the same n cities).
  */
 public class Main {
@@ -138,7 +140,16 @@ public class Main {
         );
     }
 
-    /*private static void listCitiesCommand() {
+    /**
+     * Handles the {@code listCities} command
+     * Prints every city as "country - population - city", in listing order,
+     * with a help of an iterator. The order comes from the CityListComparator.
+     * The names are printed the same way as were inputted.
+     *
+     * Time complexity: O(1) at best case (empty list) and O(n) worst case
+     */
+
+    /* private static void listCitiesCommand() {
         if(!citiesByListing.isEmpty()){
             Iterator<CityClass> it = citiesByListing.iterator();
             while(it.hasNext()){
@@ -150,6 +161,15 @@ public class Main {
 
     }*/
 
+    /**
+     * Handles the {@code population} command.
+     * Reads the name of the city and the name of the country (one per line),
+     * creates a "city" where it will be used as a search key and population
+     * will be ignored by the cityKeyComparator.
+     *
+     * Time Complexity: O(1) at best case (city is the first one) and O(n) at worst case
+     * @throws IOException if an error occurs while reading the input
+     */
     private static void populationCommand() throws IOException {
         String cityName = in.readLine().trim();
         String countryName = in.readLine().trim();
