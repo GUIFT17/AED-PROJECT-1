@@ -149,7 +149,6 @@ public class Main {
      *
      * Time complexity: O(1) at best case (empty list) and O(n) worst case
      */
-
      private static void listCitiesCommand() {
         if(!citiesByListing.isEmpty()){
             Iterator<CityClass> it = citiesByListing.iterator();

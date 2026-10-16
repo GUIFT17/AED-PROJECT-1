@@ -37,7 +37,6 @@ public class SortedLinkedList<E> extends LinkedList<E> implements SortedList<E> 
      * @return first element in the list
      * @throws NoSuchElementException - if size() == 0
      */
-
     public E getMin( ) {
         //TODO: Left as an exercise.
         if (isEmpty())
